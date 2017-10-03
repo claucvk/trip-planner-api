@@ -31,6 +31,7 @@ class TripsController < OpenReadController
 
   # PATCH/PUT /trips/1
   def update
+    @trip = current_user.trips.find(params[:id])
     if @trip.update(trip_params)
       head :no_content
     else
