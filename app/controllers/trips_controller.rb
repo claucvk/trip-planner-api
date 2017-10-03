@@ -32,7 +32,7 @@ class TripsController < OpenReadController
   # PATCH/PUT /trips/1
   def update
     if @trip.update(trip_params)
-      render json: @trip
+      head :no_content
     else
       render json: @trip.errors, status: :unprocessable_entity
     end
@@ -40,6 +40,7 @@ class TripsController < OpenReadController
 
   # DELETE /trips/1
   def destroy
+    @trip = current_user.trips.find(params[:id])
     @trip.destroy
 
     head :no_content
