@@ -3,7 +3,7 @@ class TripsController < OpenReadController
 
   # GET /trips
   def index
-    binding.pry
+    # binding.pry
     @trips = current_user.trips
     # @trips = Trip.all
 
@@ -12,7 +12,7 @@ class TripsController < OpenReadController
 
   # GET /trips/1
   def show
-    @trip = current_user.trips.find([:id])
+    @trip = current_user.trips.find(params[:id])
     render json: @trip
   end
 
@@ -48,7 +48,7 @@ class TripsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip
-      @trip = current_user.trips.find([:id])
+      @trip = current_user.trips.find(params[:id])
       # Trip.find(params[:id])
     end
 
