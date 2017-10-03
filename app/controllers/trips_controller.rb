@@ -3,20 +3,21 @@ class TripsController < OpenReadController
 
   # GET /trips
   def index
-
-    @trips = Trip.all
+    binding.pry
+    @trips = current_user.trips
+    # @trips = Trip.all
 
     render json: @trips
   end
 
   # GET /trips/1
   def show
+    @trip = current_user.trips.find([:id])
     render json: @trip
   end
 
   # POST /trips
   def create
-    binding.pry
     @trip = current_user.trips.build(trip_params)
 
     # Trip.new(trip_params)
@@ -40,12 +41,15 @@ class TripsController < OpenReadController
   # DELETE /trips/1
   def destroy
     @trip.destroy
+
+    head :no_content
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip
-      @trip = Trip.find(params[:id])
+      @trip = current_user.trips.find([:id])
+      # Trip.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
