@@ -23,7 +23,6 @@ class ApplicationController < ActionController::API
   def authenticate
     @current_user =
       authenticate_or_request_with_http_token(&AUTH_PROC)
-      binding.pry
   end
 
   # call from actions to get authenticated user (or nil)
