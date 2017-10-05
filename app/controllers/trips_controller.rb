@@ -1,6 +1,5 @@
 class TripsController < OpenReadController
   before_action :set_trip, only: [:show, :update, :destroy]
-
   # GET /trips
   def index
     # binding.pry
