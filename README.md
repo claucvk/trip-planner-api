@@ -22,7 +22,7 @@ https://i.imgur.com/aNxvpVU.jpg
 - Back-end Repository: https://github.com/claucvk/trip-planner-api
 - Front-end Repository: https://github.com/claucvk/trip-planner-client
 - Back-end Deployed: https://lit-headland-30270.herokuapp.com/
-- Front-end Deployed:
+- Front-end Deployed:https://tripplannercv.herokuapp.com/
 
 ## Unsolved problems or major hurdles
-- When I make a request I got options method display on the browse. To fix that problem I used Rack::Cors to make a proper cross domain AJAX calls. 
+- When I make a request I got options method display on the browse. To fix that problem I used Rack::Cors to make a proper cross domain AJAX calls.
